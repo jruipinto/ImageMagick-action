@@ -8,7 +8,7 @@ inputs:
   command:
     description: 'ImageMagick command to be executed'
     required: true
-    default: 'mogrify -path /images -auto-orient -resize x500 *.*'
+    default: 'mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images/*.*'
 outputs:
   time:
     description: 'The time we greeted you'

@@ -7,11 +7,13 @@ With [ImageMagick](https://imagemagick.org/)
 
 ```yml
 - name: ImageMagick Action
-  uses: jruipinto/ImageMagick-action@v0.2-alpha
+  uses: jruipinto/ImageMagick-action@v1
   with:
     # ImageMagick command to be executed
-    command: mogrify -path /my-path -auto-orient -resize 800x450 *.* # default is mogrify -path /images -auto-orient -resize x500 *.*
+    command: mogrify -path /my-path -auto-orient -resize 800x450 /my-path/*.* # default is mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
 ```
+
+PS: The action may fail if you have "non image" files inside files when you don't specify the file format (i.e. /my-path/\*.jpg)
 
 This action uses `mogrify` at its core. To understand more about the tool and how to define dimensions read this [guide on mogrify](https://imagemagick.org/script/mogrify.php)
 
