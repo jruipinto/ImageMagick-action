@@ -1,0 +1,20 @@
+# action.yml
+name: 'ImageMagick action'
+description: 'Use ImageMagick in your repo as in your desktop'
+branding:
+  icon: 'upload'  
+  color: 'yellow'
+inputs:
+  command:
+    description: 'ImageMagick command to be executed'
+    required: true
+    default: 'mogrify -path /images -auto-orient -resize x500 *.*'
+outputs:
+  time:
+    description: 'The time we greeted you'
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
