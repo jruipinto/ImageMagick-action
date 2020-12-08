@@ -1,4 +1,4 @@
 #!/bin/sh -l
 #cd $1
 #mogrify -path . -auto-orient -thumbnail $2 *.*
-$1
+magick $1
